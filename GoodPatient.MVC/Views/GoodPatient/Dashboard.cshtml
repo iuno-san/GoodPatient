@@ -1,0 +1,542 @@
+﻿@model GoodPatient.MVC.Views.GoodPatient.DashboardModel
+
+@{
+    ViewData["Title"] = "Panel Główny";
+}
+
+
+<div class="mt-24">
+    <nav class="flex mb-4" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
+            <li class="inline-flex items-center">
+                <a class="inline-flex items-center text-gray-700">
+                    <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    GoodPatient
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="ml-1 text-gray-400 md:ml-2" aria-current="page">Panel główny</span>
+                </div>
+            </li>
+        </ol>
+        <button class="btn"></button>
+    </nav>
+    <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
+        <div class="charts-card 2xl:col-span-2 border">
+            <div class="flex items-center justify-end flex-1 text-base font-medium text-green-700">
+                12.5%
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h2 class="chart-title">Twoje Dochody na rok 2024</h2>
+            <div id="area-chart" class="mt-3"></div>
+            <div class="flex items-center justify-between pt-3 pb-4 mt-4 border-t border-gray-200 sm:pt-6">
+                <div>
+                    <button class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 rounded-lg hover:text-gray-900" type="button" data-dropdown-toggle="weekly-sales-dropdown">Ostatnie 7 dni <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow" id="weekly-sales-dropdown">
+                        <div class="px-4 py-3" role="none">
+                            <p class="text-sm font-medium text-gray-900 truncate" role="none">
+                                23 stycznia 2024 - 30 stycznia 2024
+                            </p>
+                        </div>
+                        <ul class="py-1" role="none">
+                            <li>
+                                <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Wczoraj</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Dziś</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Ostatnie 7 dni</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Ostatnie 30 dni</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Ostatnie 90 dni</a>
+                            </li>
+                        </ul>
+                        <div class="py-1" role="none">
+                            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 " role="menuitem">Niestandardowe...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="javascript:void(0)" class="inline-flex items-center p-2 text-xs font-medium uppercase rounded-lg text-gray-700 sm:text-sm hover:bg-gray-100">
+                        Raport sprzedaży
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--Tabs widget -->
+        <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 flex">
+            <div class="w-100">
+                <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl ">
+                    Zalecane działania
+                </h5>
+                <p class="text-sm font-normal text-gray-500">Na dobry start dodaj swoich pacjentów, zapisz przyszłe wizyty, oraz zebrane Dochody.</p>
+                <ul class="my-4 space-y-3">
+                    <li>
+                        <a href="@Url.Action("Index","GoodPatient")" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow   ">
+                            <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4c0 1.1.9 2 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.8-3.1a5.5 5.5 0 0 0-2.8-6.3c.6-.4 1.3-.6 2-.6a3.5 3.5 0 0 1 .8 6.9Zm2.2 7.1h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1l-.5.8c1.9 1 3.1 3 3.1 5.2ZM4 7.5a3.5 3.5 0 0 1 5.5-2.9A5.5 5.5 0 0 0 6.7 11 3.5 3.5 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4c0 1.1.9 2 2 2h.5a6 6 0 0 1 3-5.2l-.4-.8Z" clip-rule="evenodd"/>
+                              </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Dodaj swoich pacjentów</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Calendar","GoodPatient")" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow   ">
+                            <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.1 12.6v-1.8A5.4 5.4 0 0 0 13 5.6V3a1 1 0 0 0-2 0v2.4a5.4 5.4 0 0 0-4 5.5v1.8c0 2.4-1.9 3-1.9 4.2 0 .6 0 1.2.5 1.2h13c.5 0 .5-.6.5-1.2 0-1.2-1.9-1.8-1.9-4.2Zm-13.2-.8a1 1 0 0 1-1-1c0-2.3.9-4.6 2.5-6.4a1 1 0 1 1 1.5 1.4 7.4 7.4 0 0 0-2 5 1 1 0 0 1-1 1Zm16.2 0a1 1 0 0 1-1-1c0-1.8-.7-3.6-2-5a1 1 0 0 1 1.5-1.4c1.6 1.8 2.5 4 2.5 6.4a1 1 0 0 1-1 1ZM8.8 19a3.5 3.5 0 0 0 6.4 0H8.8Z" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Ustaw swoje przyszłe wizyty</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Earnings","GoodPatient")" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow   ">
+                            <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M9 15a6 6 0 1 1 12 0 6 6 0 0 1-12 0Zm3.8-1.9c.3-.5.7-1 1.2-1.2a1 1 0 0 1 2 0c.5.1.8.4 1.1.7a1 1 0 1 1-1.4 1.4l-.4-.2h-.1a.4.4 0 0 0-.4 0l.4.3a3 3 0 0 1 1.5.9 2 2 0 0 1 .5 1.9c-.3.5-.7 1-1.2 1.2a1 1 0 0 1-2 0c-.4 0-.8-.3-1.2-.7a1 1 0 1 1 1.6-1.3l.3.2h.1a.4.4 0 0 0 .4 0 1 1 0 0 0-.4-.3 3 3 0 0 1-1.5-.9 2 2 0 0 1-.5-2Zm2 .6Zm.5 2.6ZM4 14c.6 0 1 .4 1 1v4a1 1 0 1 1-2 0v-4c0-.6.4-1 1-1Zm3-2c.6 0 1 .4 1 1v6a1 1 0 1 1-2 0v-6c0-.6.4-1 1-1Zm6.5-8c0-.6.4-1 1-1H18c.6 0 1 .4 1 1v3a1 1 0 1 1-2 0v-.8l-2.3 2a1 1 0 0 1-1.3.1l-2.9-2-3.9 3a1 1 0 1 1-1.2-1.6l4.5-3.5a1 1 0 0 1 1.2 0l2.8 2L15.3 5h-.8a1 1 0 0 1-1-1Z" clip-rule="evenodd" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Dodawaj swoje Dochody</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow   ">
+                            <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M9 7V2.2a2 2 0 0 0-.5.4l-4 3.9a2 2 0 0 0-.3.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5h7.6l-.3.3a1 1 0 0 0 1.4 1.4l2-2c.4-.4.4-1 0-1.4l-2-2a1 1 0 0 0-1.4 1.4l.3.3H4V9h5a2 2 0 0 0 2-2Z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Otrzymuj fachowe raporty</span>
+                            <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded">Funkcja Pro</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cursor-pointer flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow   ">
+                            <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8.7 8.7c1.1-1 2.2-2 3.3-2.7m0 0c3.1-2 6-2.6 7.4-1.3 1.8 1.8 0 6.6-4 10.7-4.1 4-8.9 5.8-10.7 4C3.4 18 4 15.2 6 12m6-6C9 4 6 3.3 4.7 4.6c-1.8 1.8 0 6.6 4 10.7M12 6c1.2.7 2.3 1.7 3.4 2.7m2.7 3.4c2 3 2.6 6 1.3 7.3C18 20.7 15 20 12 18m2-6a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Konsultant AI</span>
+                            <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded">Funkcja Pro</span>
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <span class="inline-flex items-center text-xs font-normal text-gray-500">
+                        <svg class="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z" clip-rule="evenodd" />
+                        </svg>
+
+                        Są to przykładowe dane dla twojego dashboardu.
+                    </span>
+					<br />
+                    <a href="@Url.Action("Contact","Home")" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline">
+                        <svg class="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        Potrzebujesz pomocy z oprogramowaniem?
+                    </a>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-2 2xl:grid-cols-3">
+      <div class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex  sm:p-6 ">
+        <div class="w-full">
+          <h3 class="text-base font-normal text-gray-500 ">Nowi pacjencji</h3>
+          <span class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl ">18</span>
+          <p class="flex items-center text-base font-normal text-gray-500 ">
+            <span class="flex items-center mr-1.5 text-sm text-green-700 ">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"></path>
+              </svg>
+              14.5% 
+            </span>
+            Ostatni miesiąc
+          </p>
+        </div>
+        <div class="w-full" id="new-patient-chart"></div>
+      </div>
+      <div class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex  sm:p-6 ">
+        <div class="w-full">
+          <h3 class="text-base font-normal text-gray-500 ">Nowe Dochody</h3>
+          <span class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl ">4,340zł</span>
+          <p class="flex items-center text-base font-normal text-gray-500 ">
+            <span class="flex items-center mr-1.5 text-sm text-green-700 ">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path clip-rule="evenodd" fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z"></path>
+              </svg>
+              10,4% 
+            </span>
+             Ostatni miesiąc
+          </p>
+        </div>
+        <div class="w-full" id="earnings-chart"></div>
+      </div>
+      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm  sm:p-6 ">
+        <div class="w-full">
+          <h3 class="mb-2 text-base font-normal text-gray-500 ">Pacjencji według wieku</h3>
+          <div class="flex items-center mb-2">
+            <div class="w-16 text-sm font-medium ">50+</div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 ">
+                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 18%"></div>
+            </div>
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="w-16 text-sm font-medium ">40+</div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 ">
+                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 15%"></div>
+            </div>
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="w-16 text-sm font-medium ">30+</div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 ">
+                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="w-16 text-sm font-medium ">20+</div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 ">
+              <div class="bg-red-600 h-2.5 rounded-full" style="width: 30%"></div>
+            </div>
+          </div>
+            <div class="flex items-center mb-2">
+                <div class="w-16 text-sm font-medium ">0+</div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 ">
+                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 10%"></div>
+                </div>
+            </div>
+        </div>
+        <div id="traffic-channels-chart" class="w-full"></div>
+      </div>
+    </div>
+
+
+<script>
+    
+    /* Main chart */
+
+    const wykresObszaruOpcje = {
+        series: [
+            {
+                name: 'Uzyskana Kwota',
+                data: [3000, 4500, 3500, 5000, 4200, 7000, 6500, 8000, 5500, 6000, 7500, 7000],
+            },
+            {
+                name: 'Liczba Przyjętych Pacjentów',
+                data: [15, 20, 18, 25, 22, 40, 35, 45, 30, 38, 42, 50],
+            },
+        ],
+        chart: {
+            type: 'area',
+            background: 'transparent',
+            height: 350,
+            stacked: false,
+            toolbar: {
+                show: false,
+            },
+        },
+        colors: ['#00ab57', '#d50000'],
+        labels: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru', 'Sty', 'Lut', 'Mar'],
+        dataLabels: {
+            enabled: false,
+        },
+        fill: {
+            gradient: {
+                opacityFrom: 0.4,
+                opacityTo: 0.1,
+                shadeIntensity: 1,
+                stops: [0, 100],
+                type: 'vertical',
+            },
+            type: 'gradient',
+        },
+        grid: {
+            borderColor: '#e0e0e0',
+            yaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+            xaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+        },
+        legend: {
+            labels: {
+                colors: '#333',
+            },
+            show: true,
+            position: 'top',
+        },
+        markers: {
+            size: 6,
+            strokeColors: '#fff',
+            strokeWidth: 3,
+        },
+        stroke: {
+            curve: 'smooth',
+        },
+        xaxis: {
+            axisBorder: {
+                color: '#e0e0e0',
+                show: true,
+            },
+            axisTicks: {
+                color: '#e0e0e0',
+                show: true,
+            },
+            labels: {
+                offsetY: 5,
+                style: {
+                    colors: '#333',
+                },
+            },
+        },
+        yaxis: [
+            {
+                title: {
+                    text: 'Uzyskana Kwota',
+                    style: {
+                        color: '#333',
+                    },
+                },
+                labels: {
+                    style: {
+                        colors: ['#333'],
+                    },
+                },
+            },
+            {
+                opposite: true,
+                title: {
+                    text: 'Liczba Przyjętych Pacjentów',
+                    style: {
+                        color: '#333',
+                    },
+                },
+                labels: {
+                    style: {
+                        colors: ['#333'],
+                    },
+                },
+            },
+        ],
+        tooltip: {
+            shared: true,
+            intersect: false,
+            theme: 'light',
+        },
+    };
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const wykresObszaru = new ApexCharts(
+            document.querySelector('#area-chart'),
+            wykresObszaruOpcje
+        );
+        wykresObszaru.render();
+    });
+
+    /*--------------------------------------------------*/
+
+    if (document.getElementById('new-patient-chart')) {
+        const options = {
+            colors: ['#dc2626', '#FDBA8C'],
+            series: [
+                {
+                    name: 'Pacjenci',
+                    color: '#dc2626',
+                    data: [
+                        { x: '23 Styczeń', y: 1 },
+                        { x: '24 Styczeń', y: 3 },
+                        { x: '25 Styczeń', y: 2 },
+                        { x: '26 Styczeń', y: 4 },
+                        { x: '27 Styczeń', y: 1 },
+                        { x: '28 Styczeń', y: 2 },
+                        { x: '29 Styczeń', y: 5 },
+                    ]
+                }
+            ],
+            chart: {
+                type: 'bar',
+                height: '140px',
+                fontFamily: 'Inter, sans-serif',
+                foreColor: '#4B5563',
+                toolbar: {
+                    show: false
+                }
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '90%',
+                    borderRadius: 3
+                }
+            },
+            tooltip: {
+                shared: false,
+                intersect: false,
+                style: {
+                    fontSize: '14px',
+                    fontFamily: 'Inter, sans-serif'
+                },
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'darken',
+                        value: 1
+                    }
+                }
+            },
+            stroke: {
+                show: true,
+                width: 5,
+                colors: ['transparent']
+            },
+            grid: {
+                show: false
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: false
+            },
+            xaxis: {
+                floating: false,
+                labels: {
+                    show: false
+                },
+                axisBorder: {
+                    show: false
+                },
+                axisTicks: {
+                    show: false
+                },
+            },
+            yaxis: {
+                show: false
+            },
+            fill: {
+                opacity: 1
+            }
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+            const chart = new ApexCharts(document.getElementById('new-patient-chart'), options);
+            chart.render();
+        });
+    }
+
+    /*--------------------------------------------------*/
+
+    const getEarningsChartOptions = () => {
+        let earningsChartColors = {
+            backgroundBarColors: ['#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB']
+        }
+
+        return {
+            series: [{
+                name: 'Zarobione złotych',
+                data: [300, 650, 330, 1000, 200, 550, 1300]
+            }],
+            labels: ['23 Styczeń', '24 Styczeń', '25 Styczeń', '26 Styczeń', '27 Styczeń', '28 Styczeń', '29 Styczeń'],
+            chart: {
+                type: 'bar',
+                height: '140px',
+                foreColor: '#00ab57',
+                fontFamily: 'Inter, sans-serif',
+                toolbar: {
+                    show: false
+                }
+            },
+            theme: {
+                monochrome: {
+                    enabled: true,
+                    color: '#00ab57'
+                }
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: '25%',
+                    borderRadius: 3,
+                    colors: {
+                        backgroundBarColors: earningsChartColors.backgroundBarColors,
+                        backgroundBarRadius: 3
+                    },
+                },
+                dataLabels: {
+                    hideOverflowingLabels: false
+                }
+            },
+            xaxis: {
+                floating: false,
+                labels: {
+                    show: false
+                },
+                axisBorder: {
+                    show: false
+                },
+                axisTicks: {
+                    show: false
+                },
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+                style: {
+                    fontSize: '14px',
+                    fontFamily: 'Inter, sans-serif'
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'darken',
+                        value: 0.8
+                    }
+                }
+            },
+            fill: {
+                opacity: 1
+            },
+            yaxis: {
+                show: false
+            },
+            grid: {
+                show: false
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: false
+            },
+        };
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        if (document.getElementById('earnings-chart')) {
+            const chart = new ApexCharts(document.getElementById('earnings-chart'), getEarningsChartOptions());
+            chart.render();
+
+        }
+    });
+
+ 
+
+</script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>

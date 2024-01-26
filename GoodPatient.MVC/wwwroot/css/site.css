@@ -1,0 +1,87 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.container-lg {
+    padding: 1rem;
+}
+
+header {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+a:hover {
+    color: #bd1717;
+}
+
+.custom-margin-dashboard {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media (min-width: 1280px) {
+    .custom-margin-dashboard {
+        margin-left: 22%;
+        margin-right: 8%;
+    }
+    .chart-title {
+        font-size: 3rem !important;
+    }
+}
+
+.charts-card {
+    padding: 25px 10px 0 10px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 8px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.results tr[visible='false'],
+.no-result {
+    display: none;
+}
+
+.results tr[visible='true'] {
+    display: table-row;
+}

@@ -1,0 +1,67 @@
+﻿@model GoodPatient.Application.GoodPatient.GoodPatientDto
+
+@{
+    ViewData["Title"] = "pacjent " + @Model.FullName;
+}
+
+
+<h1 class="mt-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">Szczegóły pacjenta <span class="underline underline-offset-3 decoration-8 decoration-red-400">@Model.FullName</span></h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl mt-4">Informacje o pacjencie.</p>
+
+<div class="container-xl px-4">
+    <div class="row text-center">
+        <div class="mb-20">
+            <!-- Account details card-->
+            <div class="row">
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Imię i nazwisko:</label>
+                    <input type="text" value="@Model.FullName" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Email:</label>
+                    <input type="text" value="@Model.Email" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Numer Telefonu:</label>
+                    <input type="text" value="@Model.PhoneNumber" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Opis pacjenta:</label>
+                    <input type="text" value="@Model.About" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Wiek:</label>
+                    <input type="text" value="@Model.Age" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Adres:</label>
+                    <input type="text" value="@Model.Address" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Choroby i alergie:</label>
+                    <input type="text" value="@Model.DiseasesAndAllergies" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Numer ubezpieczenia zdrowotnego:</label>
+                    <input type="text" value="@Model.HealthInsuranceNumber" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Skype:</label>
+                    <input type="text" value="@Model.Skype" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Facebook:</label>
+                    <input type="text" value="@Model.Facebook" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                </div>
+
+            </div>
+            <div class="flex">
+                @if(Model.IsEditable)
+                {
+                  <a asp-controller="GoodPatient" asp-action="Edit" asp-route-encodedName="@Model.EncodedName" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-2.5 text-center">Edytuj pacjenta</a>
+                }
+                 <a asp-action="Index" class="mt-4 ml-4 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-2.5 text-center">Wróć do listy</a>
+            </div>
+        </div>
+    </div>
+</div>

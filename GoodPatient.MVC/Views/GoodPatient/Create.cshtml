@@ -1,0 +1,96 @@
+﻿@using GoodPatient.Application.GoodPatient.Commands.CreateGoodPatient;
+@model CreateGoodPatientCommand
+
+@{
+    ViewData["Title"] = "Dodawanie nowego pacjenta";
+}
+
+<h1 class="mt-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">Dodajesz nowego <span class="underline underline-offset-3 decoration-8 decoration-red-400">Pacjenta</span></h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl mt-4">Dodaj nowego pacjenta do swojej listy.</p>
+
+<div class="container-xl px-4">
+    <div class="row text-center">
+        <div class="mb-20">
+            <!-- Account details card-->
+            <form class="row" action="/GoodPatient/Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="col-md-12 text-danger mb-3"></div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="FullName" class="block mb-2 text-sm font-medium text-gray-900">Imię i nazwisko</label>
+                    <input asp-for="FullName" type="text" placeholder="Wprowadź imię i nazwisko" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Email" class="block mb-2 text-sm font-medium text-gray-900">Adres email</label>
+                    <input asp-for="Email" type="text" placeholder="Wprowadź adres email pacjenta" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="PhoneNumber" class="block mb-2 text-sm font-medium text-gray-900">Numer telefonu</label>
+                    <input asp-for="PhoneNumber" type="text" placeholder="Wprowadź numer telefonu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="About" class="block mb-2 text-sm font-medium text-gray-900">Opis pacjenta</label>
+                    <input asp-for="About" type="text" placeholder="Wprowadź krótki opis pacjenta" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Age" class="block mb-2 text-sm font-medium text-gray-900">Wiek</label>
+                    <input asp-for="Age" type="text" placeholder="Wprowadź wiek" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Address" class="block mb-2 text-sm font-medium text-gray-900">Adres</label>
+                    <input asp-for="Address" type="text" placeholder="Wprowadź adres" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="DiseasesAndAllergies" class="block mb-2 text-sm font-medium text-gray-900">Dolegliwości</label>
+                    <input asp-for="DiseasesAndAllergies" type="text" placeholder="Wprowadź choroby lub alergie" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="DiseasesAndAllergies" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="HealthInsuranceNumber" class="block mb-2 text-sm font-medium text-gray-900">Numer ubezpieczenia zdrowotnego</label>
+                    <input asp-for="HealthInsuranceNumber" type="text" placeholder="Wprowadź numer ubezpieczenia zdrowotnego" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="HealthInsuranceNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Skype" class="block mb-2 text-sm font-medium text-gray-900">Skype</label>
+                    <input asp-for="Skype" type="text" placeholder="Wprowadź dodatkowy kontakt np Skype" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Skype" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Facebook" class="block mb-2 text-sm font-medium text-gray-900">Facebook</label>
+                    <input asp-for="Facebook" type="text" placeholder="Wprowadź dodatkowy kontakt np Facebook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Facebook" class="text-danger"></span>
+                </div>
+
+                <div class="flex items-start mb-6">
+                </div>
+                <div class="flex">
+                    <button type="submit" value="Add your patient" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-2.5 text-center">Dodaj pacjenta</button>
+                    <a asp-action="Index" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 ml-3 py-2.5 text-center">Wróc do listy</a>
+                </div>
+            </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

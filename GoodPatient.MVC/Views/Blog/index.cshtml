@@ -1,0 +1,55 @@
+﻿@page
+@model GoodPatient.MVC.Views.Blog.indexModel
+@{
+}
+
+
+
+<section x-data="{ posts: [
+    {
+        title: 'Transformacja Praktyki Lekarskiej z GoodPatient',
+        desc: 'W dzisiejszym dynamicznym środowisku medycznym, niewątpliwie obserwujemy ewolucję praktyki lekarskiej dzięki postępowi technologicznemu. GoodPatient, jako innowacyjne oprogramowanie dla prywatnych lekarzy, wychodzi naprzeciw temu wyzwaniu, oferując kompleksowe narzędzia',
+        img: '/img/others/Blog_banner1.png',
+        date: 'Styczeń 23, 2024',
+        href: '@Url.Action("Post1", "Blog")'
+    },
+    {
+        title: 'Przełom w Zarządzaniu Praktyką Lekarską',
+        desc: 'Cieszymy się, że możemy podzielić się z Wami najnowszymi aktualizacjami dotyczącymi naszej aplikacji GoodPatient. Dążymy do ciągłego ulepszania narzędzi, aby sprostać rosnącym wymaganiom branży medycznej.',
+        img: '/img/others/Blog_banner2.png',
+        date: 'Styczeń 25, 2024',
+        href: '@Url.Action("Post2", "Blog")'
+    },
+    {
+        title: 'Zrozumienie Wpływu Technologii na Praktykę Lekarską',
+        desc: 'W dzisiejszym świecie medycyny technologia odgrywa kluczową rolę, wpływając nie tylko na efektywność praktyki lekarskiej, ale także na jakość opieki pacjentów. GoodPatient, jako lider innowacji w dziedzinie oprogramowania dla prywatnych lekarzy',
+        img: '/img/others/Blog_banner3.png',
+        date: 'Styczeń 27, 2024',
+        href: '@Url.Action("Post3", "Blog")'
+    },
+] }" class="py-32">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+        <h3 class='font-semibold text-red-700'>
+            Sekcja bloga
+        </h3>
+        <div class="space-y-5 mt-3">
+            <h1 class="text-gray-800 text-3xl font-extrabold sm:text-4xl">Najnowsze wpisy na blogu</h1>
+            <p class="text-gray-600">Wszystkie najnowsze wiadomości GoodPatient, prosto od zespołu. </p>
+        </div>
+        <ul class="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+            <template x-for="(item, index) in posts" :key="index">
+                <li class="w-full mx-auto group sm:max-w-sm">
+                    <a :href="item.href">
+                        <img :src="item.img" loading="lazy" :alt="item.title" class="w-full rounded-lg" />
+                        <div class="mt-3 space-y-2">
+                            <span class="block text-gray-500 text-sm" x-text="item.date"></span>
+                            <h3 class="text-lg text-gray-800 duration-150 group-hover:text-red-600 font-semibold" x-text="item.title">
+                            </h3>
+                            <p class="text-gray-600 text-sm duration-150 group-hover:text-gray-800" x-text="item.desc"></p>
+                        </div>
+                    </a>
+                </li>
+            </template>
+        </ul>
+    </div>
+</section>

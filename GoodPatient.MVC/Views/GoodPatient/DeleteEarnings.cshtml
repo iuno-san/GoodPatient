@@ -1,0 +1,62 @@
+﻿@model GoodPatient.Application.GoodPatientEarnings.GoodPatientEarningsDto
+
+@{
+    ViewData["Title"] = "Usuwanie dochódu";
+}
+
+<h1 class="mt-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">Usuń pacjenta <span class="underline underline-offset-3 decoration-8 decoration-red-400">@Model.Name</span></h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl mt-4">Czy na pewno chcesz usunąć tego pacjenta?</p>
+
+<div class="container-xl px-4">
+    <div class="row text-center">
+        <div class="mb-20">
+            <div class="row">
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Name" class="block mb-2 text-sm font-medium text-gray-900">Nazwa usługi</label>
+                    <input asp-for="Name" type="text" placeholder="Wprowadź nazwę usługi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="Amount" class="block mb-2 text-sm font-medium text-gray-900">Kwota dochodu</label>
+                    <input asp-for="Amount" type="text" placeholder="Wprowadź kwotę zarobku" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="PatientName" class="block mb-2 text-sm font-medium text-gray-900">Imię i nazwisko pacjenta</label>
+                    <input asp-for="PatientName" type="text" placeholder="Wprowadź imię i nazwisko pacjenta" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="PatientName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="DateOfVisit" class="block mb-2 text-sm font-medium text-gray-900">Data wizyty</label>
+                    <input asp-for="DateOfVisit" type="text" placeholder="Wprowadź datę wizyty" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="DateOfVisit" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="VisitDescription" class="block mb-2 text-sm font-medium text-gray-900">Opis wizyty</label>
+                    <input asp-for="VisitDescription" type="text" placeholder="Wprowadź opis wizyty" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="VisitDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="PaymentMethod" class="block mb-2 text-sm font-medium text-gray-900">Metoda płatności</label>
+                    <input asp-for="PaymentMethod" type="text" placeholder="Wprowadź metodę płatności" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                    <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6 mb-3 mt-3 text-start">
+                    <label asp-for="AdditionalNotes" class="block mb-2 text-sm font-medium text-gray-900">Dodatkowe uwagi</label>
+                    <textarea asp-for="AdditionalNotes" placeholder="Wprowadź dodatkowe uwagi" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+                    <span asp-validation-for="AdditionalNotes" class="text-danger"></span>
+                </div>
+            </div>
+            <form asp-action="DeleteConfirmedEarnings" asp-route-encodedName="@Model.EncodedName" method="post">
+                <div class="flex mt-6">
+                    <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 py-2.5 text-center">Usuń pacjenta</button>
+                    <a asp-action="Earnings" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-3 ml-3 py-2.5 text-center">Anuluj</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+﻿@model GoodPatient.MVC.Views.Home.DocsModel
+
+@if (ViewData != null)
+{
+    ViewData["Title"] = "Dokumentacja oprogramowania";
+}
+
+<div>
+    <header>
+        <div class="mx-auto max-w-screen-xl">
+            <h3 class='font-semibold text-red-700'>
+                Sekcja dokumentacji
+            </h3>
+            <div class="mt-3 sm:flex sm:items-left sm:justify-between">
+                <div class="text-left sm:text-left">
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Dokumentacja zmian w oprogramowaniu</h1>
+                    <p class="mt-3 text-sm text-gray-500">Jest nam niezmiernie miło ogłosić najnowszą aktualizację GoodPatient v1.0.4, udostępnioną 26 stycznia 2024 roku. Ta wersja wprowadza szereg nowych funkcji, aby jeszcze bardziej ułatwić prywatnym lekarzom zarządzanie praktyką i oferować pacjentom kompleksową opiekę.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <ol class="relative border-s border-gray-200 mt-10">
+        <li class="mb-10 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-8 ring-white">
+                <svg class="w-2.5 h-2.5 text-red-800 dark:text-red-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+            </span>
+            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">GoodPatient Wersja v1.0.4<span class="bg-red-800 text-red-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3">Najnowsza</span></h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Wydany 26 stycznia 2024 roku</time>
+            <p class="text-base font-normal text-gray-500 ">Nowoczesny Dashboard: Zaktualizowano dashboard, aby zapewnić lekarzom pełny przegląd ważnych informacji związanych z praktyką. Intuicyjny układ ułatwia szybkie dostępy do kluczowych danych.</p>
+            <p class="text-base font-normal text-gray-500 ">Rozbudowany Kalendarz Wizyt: Kalendarz wizyt został rozbudowany o nowe funkcje, takie jak szybkie dodawanie wizyt, powiadomienia o nadchodzących spotkaniach oraz możliwość rezerwacji online przez pacjentów.</p>
+            <a href="@Url.Action("Dashboard", "GoodPatient")" class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-900 border border-gray-200 rounded-lg hover:bg-gray-100">
+                <svg class="w-6 h-6 text-gray-800 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M3 4a1 1 0 0 0-.8 1.6L6.6 12l-4.4 6.4A1 1 0 0 0 3 20h13.2c.3 0 .6-.2.8-.4l4.8-7a1 1 0 0 0 0-1.2l-4.8-7a1 1 0 0 0-.8-.4H3Z" clip-rule="evenodd" />
+                </svg>
+                Zaczniji już teraz
+            </a>          
+        </li>
+        <li class="mb-10 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-8 ring-white ">
+                <svg class="w-2.5 h-2.5 text-red-800 dark:text-red-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 ">GoodPatient Wersja v1.0.3</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Wydany 24 stycznia 2024 roku</time>
+            <p class="text-base font-normal text-gray-500 ">Raportowanie Finansowe: Nowy moduł umożliwiający lekarzom pełne śledzenie zarobków, generowanie raportów finansowych i analizę statystyk. Pomaga w podejmowaniu lepszych decyzji biznesowych.</p>
+        </li>
+        <li class="mb-10 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-8 ring-white ">
+                <svg class="w-2.5 h-2.5 text-red-800 dark:text-red-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 ">GoodPatient Wersja v1.0.2</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Wydany 24 stycznia 2024 roku</time>
+            <p class="text-base font-normal text-gray-500 ">Wsparcie 24/7: Nowy system wsparcia zapewnia dostęp do pomocy technicznej przez całą dobę, 7 dni w tygodniu. Nasz zespół jest gotów rozwiązać wszelkie problemy i odpowiedzieć na pytania użytkowników.</p>
+        </li>
+        <li class="mb-10 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-8 ring-white ">
+                <svg class="w-2.5 h-2.5 text-red-800 dark:text-red-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 ">GoodPatient Wersja v1.0.1</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Wydany 22 stycznia 2024 roku</time>
+            <p class="text-base font-normal text-gray-500 ">Rozszerzone Bezpieczeństwo Danych: Wprowadzono dodatkowe środki bezpieczeństwa, aby zabezpieczyć dane pacjentów. GoodPatient nadal dba o najwyższe standardy ochrony prywatności.</p>
+        </li>
+        <li class="mb-10 ms-6">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-red-100 rounded-full -start-3 ring-8 ring-white ">
+                <svg class="w-2.5 h-2.5 text-red-800 dark:text-red-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 ">GoodPatient Wersja v1.0.0</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Wydany 19 stycznia 2024 roku</time>
+            <p class="text-base font-normal text-gray-500 ">Aktualizacje Interfejsu Użytkownika: Wprowadzono subtelne ulepszenia interfejsu użytkownika, aby zapewnić jeszcze lepsze doświadczenie podczas korzystania z aplikacji.</p>
+        </li>
+    </ol>
+</div>

@@ -1,0 +1,66 @@
+﻿@model GoodPatient.MVC.Views.Home.FAQModel
+
+@if (ViewData != null)
+{
+    ViewData["Title"] = "FAQ";
+}
+
+
+<!-- FAQ Section -->
+<section class='py-14' x-data="{ faqsList: [
+    {
+        q: 'Jakie są korzyści płynące z wykorzystywania aplikacji GoodPatient w mojej praktyce lekarskiej?',
+        a: 'GoodPatient umożliwia łatwe zarządzanie pacjentami, kalendarzem wizyt, rozpisywaniem zarobków, oraz zapewnia wsparcie 24/7. Nasza aplikacja skupia się na efektywności, zapewniając jednocześnie bezpieczeństwo danych i szybkość działania.'
+    },
+    {
+        q: 'Czy jest dostępny darmowy plan, a jeśli tak, to jakie funkcje obejmuje?',
+        a: 'Tak, oferujemy bezpłatny plan Basic, który zawiera funkcje zarządzania pacjentami, kalendarza wizyt, rozpisywania zarobków, oraz wsparcia 24/7. To idealne rozwiązanie dla małych praktyk lekarskich.'
+    },
+    {
+        q: 'Jakie dodatkowe korzyści oferuje płatny plan Professional?',
+        a: 'Plan Professional obejmuje wszystkie funkcje z planu Basic oraz dodatkowo dostarcza dedykowanego konsultanta, zaawansowane raportowanie, prywatność i bezpieczeństwo danych na wyższym poziomie, oraz szybkość działania oprogramowania.'
+    },
+    {
+        q: 'Jak mogę uDochódać wsparcie techniczne, jeśli napotkam problemy?',
+        a: 'Nasze wsparcie techniczne działa 24/7. Możesz skorzystać z opcji czatu na platformie, wysłać e-mail na adres support@goodpatient.com lub skorzystać z dedykowanego numeru telefonu dostępnego w sekcji Kontakt.'
+    },
+    {
+        q: 'Czy mogę zmienić swój plan w dowolnym momencie?',
+        a: 'Tak, nasze plany są elastyczne. Możesz łatwo przejść na inny plan bez utraty danych. W każdej chwili możesz dostosować swój plan do aktualnych potrzeb Twojej praktyki.'
+    },
+    {
+        q: 'Jakie środki bezpieczeństwa są stosowane do ochrony prywatności danych pacjentów?',
+        a: 'GoodPatient stosuje najnowocześniejsze środki bezpieczeństwa, w tym szyfrowanie danych, zabezpieczenia przed atakami cybernetycznymi, oraz regularne audyty bezpieczeństwa. Dbamy o to, aby Twoje dane były chronione.'
+    },
+    {
+        q: 'Czy mogę skorzystać z okresu próbnego dla płatnego planu Professional?',
+        a: 'Tak, oferujemy 14-dniowy darmowy okres próbny dla planu Professional. To doskonała okazja, aby przetestować pełną funkcjonalność aplikacji bez żadnych zobowiązań.'
+    },
+    {
+        q: 'Jakie są opcje płatności dostępne dla płatnych planów?',
+        a: 'Akceptujemy płatności kartą kredytową oraz przelewem bankowym. Proces płatności jest prosty i bezpieczny.'
+    }
+]}">
+    <div class="max-w-screen-xl mx-auto px-4 gap-12 md:flex md:px-8">
+        <div class='flex-1'>
+            <div class="max-w-lg">
+                <h3 class='font-semibold text-red-700'>
+                    Sekcja FAQ
+                </h3>
+                <p class='mt-3 text-gray-800 text-3xl font-extrabold sm:text-4xl'>
+                    Często Zadawane Pytania na temat oprogramowania GoodPatient
+                </p>
+            </div>
+        </div>
+        <div class='flex-1 mt-12 md:mt-0'>
+            <ul class='space-y-4 divide-y'>
+                <template x-for="(item, idx) in faqsList" :key="idx">
+                    <li class="py-5">
+                        <summary class="flex items-center justify-between font-semibold text-gray-700" x-text="item.q"></summary>
+                        <p class='mt-3 text-gray-600 leading-relaxed' x-html="item.a"></p>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</section>

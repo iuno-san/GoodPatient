@@ -1,0 +1,33 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<section>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto mt-20 lg:py-0">
+        <span class="flex items-center mb-6 text-3xl font-semibold text-gray-900">
+            <img class="w-8 h-8 mr-2" src="/img/icons/Logo.png" alt="logo">
+            Zarządzaj swoim kontem
+        </span>
+        <div class="w-full p-6 bg-white rounded-lg shadow max-w-md  md:mt-0 sm:p-8">
+            <h2 class="mb-1 ml-4 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                <partial name="_ManageNav" />
+            </h2>
+            <div class="mt-4 space-y-4 lg:mt-5 md:space-y-5">
+              <div>
+                    @RenderBody()
+              </div>
+			</div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
